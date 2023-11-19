@@ -6,6 +6,12 @@ using namespace std;
 
 Define_Module(TodCarlanetManager);
 
+// This results in an error when simulation is terminated on carla's side since it's trying to contact an already closed simulator
+void TodCarlanetManager::finish(){
+    EV_INFO << "Contact Carla for finishing the simulation" << endl;
+    tod_carla_api::finish_simulation requestMsg;
+    sendToAndGetFromCarla<tod_carla_api::finish_simulation, tod_carla_api::ok>(requestMsg);
+}
 
 
 const map<string,cValue>& TodCarlanetManager::getExtraInitParams(){
