@@ -88,6 +88,10 @@ network TODNetTown4
             @display("p=540,330");
         }
         
+        bg_car: CarlaCar {
+            @display("p=540,330");
+        }
+        
         bgUe_1[numBgUes]: NRUe;
         bgUeTod_1[numTodBgUes]: NRUe{
          	@display("i=misc/car2");   
